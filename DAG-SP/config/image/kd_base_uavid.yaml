@@ -27,7 +27,7 @@ data_cfg:
   # Enables knowledge distillation for the dataset. See data.image.image_dataset.ImageLogitsDataset
   logit_distillation: true
   # Location of the logits from the teacher model for knowledge distillation. Should point to the train_logits folder of the teacher model´s results
-  logits_folder: ./checkpoints/teacher_25_2.5/train_logits # FILL
+  logits_folder:  # FILL
   # Min number of frames for a video to be counted. Should be left to 0 for all datasets, was used for AeroScapes only.
   min_vid_len: 0
   # Number of labeled frames used for training per video. Should use train_skip_frames instead.
