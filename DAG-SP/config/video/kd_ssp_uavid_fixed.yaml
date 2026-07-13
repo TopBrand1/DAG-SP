@@ -1,0 +1,65 @@
+data_cfg:
+  adjacent_frames:
+  - -1
+  crop_size:
+  - 736
+  - 1280
+  data_augmentation: true
+  dataset: uavid
+  labeled_frames_per_vid: null
+  logit_distillation: true
+  logits_folder: /mnt/sda/zhp/SSP/checkpoints/teacher_25_2.5/train_logits
+  min_vid_len: 0
+  opencv_homos: false
+  opencv_model_type: akaze
+  path: null
+  soft_labels: true
+  square_crop: true
+  train_skip_frames: 2
+  val_skip_frames: 1
+image_model_cfg:
+  best_model: false
+  checkpoint_folder: ''
+  checkpoint_name: 07-12_13-12
+  image_save_dir: checkpoints
+loss_cfg:
+  class_weights: null
+  loss_func: kldiv
+  softmax_on_target: true
+  temperature: 2
+model_cfg:
+  checkpoint_model: small
+  frozen_encoder: false
+  model_architecture: hierasam_upernet
+  upsampling: bicubic
+  use_auxiliary_head: false
+optim_cfg:
+  final_lr: 0.0001
+  momentum: 0.9
+  optimizer: adamw
+  scheduler: cosine
+  scheduler_power: 0.9
+  start_lr: 0.0001
+  warmup_epochs: 2
+  weight_decay: 0.05
+pretrained_checkpoint: null
+resume_training: null
+save_dir: checkpoints
+training_cfg:
+  batch_size: 4
+  early_stopping: 20
+  lr: 5.0e-05
+  num_epochs: 25
+  num_workers: 16
+  secondary_lr: 0.0001
+  trained_layer: null
+video_model_cfg:
+  const_loss_lb: 135000.0
+  k_registrator_model: disk
+  kd_consistent_labels: true
+  last_out_loss_lb: 1.0
+  model_name: base
+  pred_mixing_op: id
+  sim_op: conv
+  upsample_before_mixing: true
+  upsampling: bicubic
